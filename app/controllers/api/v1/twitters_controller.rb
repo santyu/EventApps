@@ -7,7 +7,7 @@ module Api
         @twitters = TwitterAPI.get_tweets(params[:query], params[:geocode], params[:type]) 
         # 動画のみの投稿に絞る
         @twitters.keep_if { |tweet| tweet.media.first.present? && tweet.media.first.expanded_url.to_s.include?('video') }
-
+        
         render json: @twitters
       end
 

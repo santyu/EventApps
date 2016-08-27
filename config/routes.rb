@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
+
   namespace :api, format: 'json' do
     namespace :v1 do
       resources :twitters
       # get 'twitters/index'
       # get 'twitters/show'
+      
+      resources :instagrams
+      # get 'instagrams/index'
+      # get 'instagrams/show'
     end
   end
   # The priority is based upon order of creation: first created -> highest priority.

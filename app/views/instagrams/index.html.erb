@@ -1,0 +1,7 @@
+<h1>Instagrams#index</h1>
+<p>Find me in app/views/instagrams/index.html.erb</p>
+<% @medias.each do |media| %>
+  <%= link_to media.link, :target => "_blank" do %>
+      <%= image_tag(media.images.low_resolution.url) %>
+        <% end %>
+        <% end %>
