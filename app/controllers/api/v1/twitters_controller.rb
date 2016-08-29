@@ -18,7 +18,7 @@ module Api
               created_at: tweet.created_at,
               account:    tweet.user.screen_name,
               contents:   tweet.full_text,
-              thumbnail:  tweet.media.first.media_url.to_s,
+              thumb_url:  tweet.media.first.media_url.to_s,
               video_url:  tweet.media.first.expanded_url.to_s,
             }
         end
