@@ -7,12 +7,11 @@ require 'twitter'
 
 module TwitterAPI
   def self.get_tweets(query, geocode, type)
-    # 自分でアプリケーション登録を行いAPIキーとアクセストークンを取得すること
     client = Twitter::REST::Client.new(
-      consumer_key:         '',
-      consumer_secret:      '',
-      access_token:         '',
-      access_token_secret:  '',
+      consumer_key:         'CdWbQieilW1wrrBH8AXzANLSV',
+      consumer_secret:      'bgI5EEgksLIB285Bv3vARFLGLPDXMfUUUggaHp9bJoS4GZQuIY',
+      access_token:         '1690136948-cnoRZfx7ZMh87UK824AjfrxbOvvxirzCnqIfLmi',
+      access_token_secret:  'QH3WOFkF7J6tE10zGVaaKfGlxw2lcgsypow5OCQpaLI87',
     )
 
     options = {
