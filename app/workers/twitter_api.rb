@@ -7,7 +7,6 @@ require 'twitter'
 
 module TwitterAPI
   def self.get_tweets(query, geocode, type)
-    # 自分でアプリケーション登録を行いAPIキーとアクセストークンを取得すること
     client = Twitter::REST::Client.new(
       consumer_key:         '',
       consumer_secret:      '',
@@ -30,7 +29,12 @@ module TwitterAPI
       filter:       'links',    # 抽出　'links' => リンクを含むツイートのみを検索
     }
 
-    tweets = client.search(query, options)
+    # AND検索は、クエリをスペースで繋ぐ
+    # NOT検索は、除外したいクエリの前に「-」をつける
+    blacklist = ['-えろ ', '-しね ']
+    words = blacklist.join(',')
+    words << query
+    tweets = client.search(words, options)
     tweets.take(options[:count])
   end
 end
