@@ -3,6 +3,7 @@ module Api
     class TwittersController < ApplicationController
       before_action :check_params, only: :index
   
+      # GET /api/v1/twitters
       def index
         @twitters = TwitterAPI.get_tweets(params[:query], params[:geocode], params[:type]) 
         
@@ -11,7 +12,7 @@ module Api
 
         # レスポンスボディの要素
         twitter = { count: @twitters.count, query: params[:query], geocode: params[:geocode], type: params[:type], data: data = {} }
-
+        
         @twitters.each_with_index do |tweet, index|
           data[index] = { 
               tweet_id:   tweet.id,
@@ -29,9 +30,14 @@ module Api
 
       private
       def check_params
+        if params[:location].present?
+          location = GooglePlacesAPI.search_facility_location params[:location]
+          # 周辺検索範囲が半径3km固定で良いのか要相談
+          params[:geocode] = "#{location[:lat]},#{location[:lng]},3km"
+        end
         params[:query] ||= ''
         params[:type]  ||= 'mixed'
-        params[:geocode] ||= nil
+        params[:geocode] ||= ''
       end
 
     end
