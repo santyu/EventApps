@@ -10,6 +10,10 @@ AllCops:
 LineLength:
   Max: 140
 
+# Limit methods to 20 lines. 
+MethodLength:
+  Max: 50
+
 # Use UTF-8 as the source file encoding.
 Encoding:
   Enabled: false

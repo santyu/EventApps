@@ -3,7 +3,7 @@ module Api
     class TwittersController < ApplicationController
       # GET /api/v1/twitters
       def index
-       client = Twitter::REST::Client.new(
+        client = Twitter::REST::Client.new(
           consumer_key:        ENV['TW_CONSUMER_KEY'],
           consumer_secret:     ENV['TW_CONSUMER_SECRET'],
           access_token:        ENV['TW_ACCESS_TOKEN'],

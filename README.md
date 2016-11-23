@@ -11,24 +11,3 @@
 #### [FacebookのAPI仕様を調べてみた](http://labs.septeni.co.jp/entry/20110218/1297994554)
 #### [Facebook GraphAPIについて](http://bump.hatenablog.com/entry/2014/06/25/133056)
 #### [Google Place APIを利用した位置情報検索サービスの作成](http://buf-material.github.io/blog/2014/10/02/use-google-place-on-rails4/)
-
-## TwitterAPI作成
-```
-# インストール
-$ sudo gem install twitter
-```
-https://rubygems.org/gems/tweet
-
-## InstagramAPI作成
-```
-# インストール
-$ sudo gem install instagram
-```
-https://rubygems.org/gems/instagram
-
-## GooglePlacesAPI作成
-```
-# インストール
-$ sudo gem install google_places
-```
-https://rubygems.org/gems/google_places
