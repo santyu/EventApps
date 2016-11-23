@@ -3,7 +3,7 @@ module Api
     class InstagramsController < ApplicationController
       # GET /api/v1/instagrams/
       def index
-        file = open('https://taglive.jp/wp/tglv_json/test.json')
+        file = open(CONST::TAGLIVE[:TEST_JSON])
         data = file.read.gsub('taglive_data=', '')
         hash = JSON.parse(data.chop)
         render json: hash.select { |line| line['video'].to_i == 1 }
