@@ -1,0 +1,27 @@
+# This file overrides https://github.com/bbatsov/rubocop/blob/master/config/default.yml
+AllCops:
+  Exclude:
+    - 'db/**/*'
+    - 'bin/**/*'
+    - 'public/**/*'
+    - 'config/**/*'
+
+# Limit lines to 80 characters.
+LineLength:
+  Max: 140
+
+# Use UTF-8 as the source file encoding.
+Encoding:
+  Enabled: false
+
+# Use only ascii symbols in comments.
+AsciiComments:
+  Enabled: false
+
+# Use top-level class documentation comment.
+Documentation:
+  Enabled: false
+
+# Use frozen string literal comment. 
+FrozenStringLiteralComment:
+  Enabled: false
