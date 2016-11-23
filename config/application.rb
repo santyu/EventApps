@@ -22,8 +22,5 @@ module Event
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
-    
-    # autoload rails app
-    config.autoload_paths += Dir["#{config.root}/app/workers"]
   end
 end
